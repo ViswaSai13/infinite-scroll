@@ -72,9 +72,9 @@ async function getPhotos() {
     let index = Math.floor(Math.random() * queryArray.length);
     query = queryArray[index];
     const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${APIkey}&count=${count}&query=${query}&orientation=squarish;`;
-    // const response = await fetch(apiUrl);
-    // photosArray = await response.json();
-    // displayPhotos();
+    const response = await fetch(apiUrl);
+    photosArray = await response.json();
+    displayPhotos();
   } catch (error) {
     // Catch Error Here
   }
